@@ -75,3 +75,5 @@ class Grid:
 
             self.cubes[row][col].selected = True
             self.selected = (row, col)
+
+            test
