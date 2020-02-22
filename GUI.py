@@ -60,4 +60,18 @@ class Grid:
                 thick = 1
             pygame.draw.line(self.win, (0, 0, 0), (0, i*gap),
                              (self.width, i*gap), thick)
-            pygame.draw.line(self.win, )
+            pygame.draw.line(self.win, (0,0,0), (i*gap,0), (i*gap, self.height), thick)
+
+        # Draw Cubes
+        for i in range(self.rows):
+            for j in range(self.cols):
+                self.cubes[i][j].draw(self.win)
+        
+        def select(self, row, col):
+            #Reset all other
+            for i in range(self.rows):
+                for j in range(self.cols):
+                    self.cubes[i][j].selected = False
+
+            self.cubes[row][col].selected = True
+            self.selected = (row, col)
